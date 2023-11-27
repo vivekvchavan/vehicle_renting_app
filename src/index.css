@@ -45,3 +45,9 @@ h2{
   min-height:100vh;
   
 }
+
+.carimagebooking{
+  height: 400px;
+  border-radius: 10px;
+  padding: 10px;
+}

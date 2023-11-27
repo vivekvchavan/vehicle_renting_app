@@ -17,12 +17,10 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path='/login' exact element={<Login/> }/>
           <Route path='/signup' exact element={<CreateAccount/> }/>
-          <Route path='/booking' exact element={<Booking/> }/>
+          <Route path='/booking/:vehicleid' exact element={<Booking/> }/>
           <Route path='*' exact element={<Error404/> }/>
         </Routes>
       </BrowserRouter>
-
-
     </div>
   );
 }
