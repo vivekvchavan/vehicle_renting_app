@@ -5,10 +5,15 @@ import {Row,Col,Form,Input, Button} from 'antd';
 export function Login() {
     return(
         <div class='loginForm p-5'>
-            <Row className="pd-5"></Row>
+            <Row className="pd-5">
+            <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/112015/untitled-1_171.png?itok=4Z88ZeF3"/>
+            </Row>
             <Row gutter={16} className='d-flex align-items-center'>
-                <Col lg={9}></Col>
+                <Col lg={10}>
+                
+                </Col>
                 <Col lg={6} className='text-left p-5'>
+                    
                     <h1>Login</h1>
                     <hr/>
                     <Form layout='vertical'>
