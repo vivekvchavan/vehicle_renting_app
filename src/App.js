@@ -1,5 +1,5 @@
 
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Login } from './pages/Login';
 import { CreateAccount } from './pages/CreateAccount';
@@ -19,8 +19,22 @@ function App() {
           <Route path='/booking' exact element={<Booking/> }/>
         </Routes>
       </BrowserRouter>
+
+
     </div>
   );
 }
 
 export default App;
+
+export function ProtectedRoute(props){
+
+  if(localStorage.getItem('user')){
+    return <Route {...props}/>
+  } else{
+    //localStorage.removeItem('user');
+    return Navigate('/login');
+  }
+}
+
+

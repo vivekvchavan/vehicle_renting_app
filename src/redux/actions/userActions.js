@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Message, message} from 'antd';
+import { message} from 'antd';
 
 export const userLogin = (reqObj) => async dispatch=>{
     dispatch({type:'LOADING', payload:true})
@@ -7,12 +7,14 @@ export const userLogin = (reqObj) => async dispatch=>{
         const response  = await axios.post('/api/users/login',reqObj);
         localStorage.setItem('user',JSON.stringify(response.data));
         message.success('Logged in Successfull');
+        setTimeout(()=>{
+            window.location.href='/';
+        },500);
         dispatch({type:'LOADING', payload:false});
     }
     catch(error){
         dispatch({type:'LOADING', payload:false});
-        message.error('Error Something went wrong');
-        console.log(error);
+        message.error('Invalid Username or Password');
     }
 
 }
@@ -22,15 +24,16 @@ export const userLogin = (reqObj) => async dispatch=>{
 export const userRegister = (reqObj) => async dispatch=>{
     dispatch({type:'LOADING', payload:true})
     try{
-        const response  = await axios.post('/api/users/register',reqObj);
-        localStorage.setItem('user',JSON.stringify(response.data));
+         await axios.post('/api/users/register',reqObj);
         message.success('User Registered');
+        setTimeout(()=>{
+            window.location.href='/login';
+        },500);
         dispatch({type:'LOADING', payload:false});
     }
     catch(error){
         dispatch({type:'LOADING', payload:false});
         message.error('Error Something went wrong');
-        console.log(error);
     }
 
 }

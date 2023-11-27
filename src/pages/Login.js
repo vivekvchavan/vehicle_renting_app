@@ -10,7 +10,6 @@ export function Login() {
 
     function onFinish(values){
         dispatch(userLogin(values));
-        console.log(values);
     }
 
     return(
