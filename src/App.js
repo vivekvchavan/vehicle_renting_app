@@ -6,6 +6,7 @@ import { CreateAccount } from './pages/CreateAccount';
 import { Booking } from './pages/Booking';
 import './App.css';
 import 'antd/dist/antd';
+import { Error404 } from './pages/Error404';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/login' exact element={<Login/> }/>
           <Route path='/signup' exact element={<CreateAccount/> }/>
           <Route path='/booking' exact element={<Booking/> }/>
+          <Route path='*' exact element={<Error404/> }/>
         </Routes>
       </BrowserRouter>
 
