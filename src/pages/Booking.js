@@ -26,8 +26,10 @@ export function Booking({ match }) {
         <DefaultLayout>
             <h2>Confirm Booking Vehicle</h2>
             <h4>{vehicles.name}</h4>
-            <Row justify={'left'}>
+            <Row justify={'center'}>
+                
                 <Col lg={5} sm={24} xs={24}>
+                
                     <img src={vehicles.image} className='carimagebooking bs1' />
                 </Col>
                 <Col lg={8} sm={24} xs={24}>
@@ -35,15 +37,12 @@ export function Booking({ match }) {
                 </Col>
                     <div>
                         <h1>{vehicles.name} </h1>
-                        <h1>{vehicles.type} </h1>
-                        <h1>{vehicles.fuelType} </h1>
-                        <h1>{vehicles.rentPerHour} </h1>
-
+                        <p><b>Vehicle Type </b> : {vehicles.type} </p>
+                        <p><b>Fuel Type </b> : {vehicles.fuelType} </p>
+                        <p><b>Capacity </b> : {vehicles.capacity} Seater</p>
+                        <p><b>Rent Per Day </b> : {vehicles.rentPerHour} {vehicles.currencyType} </p>
                         <Button>Book</Button>
-
                     </div>
-
-                    
             </Row>
           
           
