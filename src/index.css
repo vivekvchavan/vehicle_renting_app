@@ -21,3 +21,14 @@ h2{
   font-size: 25px;
   font-weight: bold;
 }
+
+.vehicleImg{
+  height: 180px;
+  width:auto;
+  border-radius: 10px;
+}
+
+.vehicleDisplay{
+  padding: 20px;
+  box-shadow: 1lvi;
+}

@@ -5,6 +5,7 @@ import { Login } from './pages/Login';
 import { CreateAccount } from './pages/CreateAccount';
 import { Booking } from './pages/Booking';
 import './App.css';
+import 'antd/dist/antd';
 
 function App() {
   return (
