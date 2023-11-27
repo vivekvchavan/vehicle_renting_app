@@ -3,6 +3,7 @@ import { DefaultLayout } from '../components/DefaultLayout';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllVehicles } from '../redux/actions/vehicleActions';
 import { Button, Row, Col } from 'antd';
+import { Loader } from '../components/Loader';
 
 export function Home() {
     const { vehicle } = useSelector(state => state.vehicleReducer);
@@ -16,6 +17,9 @@ export function Home() {
 
     return (
         <DefaultLayout>
+
+            {loading == true && (<Loader/>) }
+
             <Row justify='center'>
                 {vehicle.map(vehicle => {
                     return <Col lg={5} sm={24} xs={24}>
